@@ -10,6 +10,31 @@ class SneakersTest {
     Sneakers crocs = new Sneakers(5555, "Crocky", "Crocs", "Kitchen", 8, 100, 50.00f);
 
     @Test
+    public void constructorTest(){
+
+        //Given
+        int expectedId = 6;
+        String expectedName = "Stan Smith";
+        String expectedBrand = "Adidas";
+        String expectedSport = "Tennnis";
+        float expectedSize = 8.5f;
+        int expectedQty = 10;
+        float expectedPrice = 80.00f;
+
+        //When
+        Sneakers testSneaker = new Sneakers(expectedId, expectedName, expectedBrand,
+                expectedSport, expectedSize, expectedQty,expectedPrice);
+
+        //Then
+        Assertions.assertEquals(expectedId, testSneaker.getId());
+        Assertions.assertEquals(expectedName, testSneaker.getName());
+        Assertions.assertEquals(expectedBrand, testSneaker.getBrand());
+        Assertions.assertEquals(expectedSport, testSneaker.getSport());
+        Assertions.assertEquals(expectedQty, testSneaker.getQty());
+        Assertions.assertEquals(expectedPrice, testSneaker.getPrice());
+    }
+
+    @Test
     void getIdTest() {
         //Given
             //Constructor
