@@ -34,8 +34,22 @@ public class SneakerService {
     }
 
     public boolean delete(int id) {
-
-
+        // sneakers [1, 2, 3, 4, 5,]
+        // remove          3
+        // sneakers [1, 2, n, 4, 5]
+        // turns to [1, 2, 4, 5]
+        // should remove the object with this id from the ArrayList if exits and return true.
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).getId() == id) {
+                inventory.remove(i);
+//                for (int j = i + 1; j < inventory.size() -1; j++) {
+//                    inventory.set(i, inventory.get(j)); //move all the elements towards the left by one
+//                    inventory.remove(inventory.size()-1);   //cut off the last element; always a duplicate
+//                }
+//                this.inventory = inventory;
+                return true;
+            }
+        }
         return false;
     }
 
