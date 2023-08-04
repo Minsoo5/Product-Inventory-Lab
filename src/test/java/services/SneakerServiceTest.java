@@ -4,6 +4,8 @@ import models.Sneakers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SneakerServiceTest {
@@ -43,6 +45,46 @@ class SneakerServiceTest {
             Assertions.assertEquals(expectedPrice, actualPrice);
 
         }
+
+      @Test
+      public void findSneakerTest() {
+            //Given
+          SneakerService ss = new SneakerService();
+
+          //When
+          Sneakers expected = ss.create("Crocky", "Crocs", "Kitchen", 8, 100, 50.00f);
+          Sneakers actual = ss.findSneaker(1);
+
+          //Then
+          Assertions.assertEquals(expected, actual);
+
+      }
+
+
+    @Test
+    public void findAllTest() {
+        //Given
+        SneakerService ss = new SneakerService();
+        Sneakers first = ss.create("Crocky", "Crocs", "Kitchen", 8, 100, 50.00f);
+        Sneakers second = ss.create("Hola", "Crocs", "Kitchen", 7, 100, 45.00f);
+
+        //When
+        Sneakers[] expected = {first, second};
+
+        //Then
+        Assertions.assertEquals(expected.length, ss.findAll().length);
+        Assertions.assertArrayEquals(expected, ss.findAll());
+
+//        Assertions.assertEquals(expected.toString(), ss.findAll().toString());
+    }
+
+    public void deleteTest() {
+        //Given
+
+        //When
+
+        //Then
+    }
 
 
 }
