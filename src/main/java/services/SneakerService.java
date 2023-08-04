@@ -1,2 +1,4 @@
-package services;public class SneakerService {
+package services;
+
+public class SneakerService {
 }

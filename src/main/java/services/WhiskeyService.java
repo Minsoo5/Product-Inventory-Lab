@@ -1,2 +1,4 @@
-package services;public class WhiskeyService {
+package services;
+
+public class WhiskeyService {
 }
