@@ -67,83 +67,106 @@ class SneakersTest {
     }
 
     @Test
-    void setBrand() {
+    void setBrandTest() {
         //Given
-
+        crocs.setBrand("Ali");
         //When
+        String expected = "Ali";
+        String actual = crocs.getBrand();
 
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void getSport() {
+    void getSportTest() {
         //Given
-
+        //Constructor
         //When
-
+        String expected = "Kitchen";
+        String actual = crocs.getSport();
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void setSport() {
+    void setSportTest() {
         //Given
-
+        crocs.setSport("Beach");
         //When
+        String expected = "Beach";
+        String actual = crocs.getSport();
 
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void getSize() {
+    void getSizeTest() {
         //Given
-
+            //Constructor
         //When
-
+        float expected = 8;
+        float actual = crocs.getSize();
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void setSize() {
+    void setSizeTest() {
         //Given
-
+        crocs.setSize(8.5f);
         //When
+        float expected = 8.5f;
+        float actual = crocs.getSize();
 
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void getQty() {
+    void getQtyTest() {
         //Given
-
+            //Constructor
         //When
-
+        int expected = 100;
+        int actual = crocs.getQty();
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void setQty() {
+    void setQtyTest() {
         //Given
-
+        crocs.setQty(0);
         //When
+        int expected = 0;
+        int actual = crocs.getQty();
 
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void getPrice() {
+    void getPriceTest() {
         //Given
-
+            //Constructor
         //When
-
+        float expected = 50.00f;
+        float actual = crocs.getPrice();
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void setPrice() {
+    void setPriceTest() {
         //Given
-
+        crocs.setPrice(0);
         //When
+        float expected = 0;
+        float actual = crocs.getPrice();
 
         //Then
+        Assertions.assertEquals(expected, actual);
     }
 }
