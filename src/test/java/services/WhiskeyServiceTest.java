@@ -2,10 +2,7 @@ package services;
 
 import models.Whiskey;
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class WhiskeyServiceTest {
 
@@ -61,6 +58,28 @@ class WhiskeyServiceTest {
 
         //Then
         Assert.assertEquals(expected, ws.findAllWhiskey());
+
+    }
+
+    @Test
+    void deleteTest() {
+        //Given
+        Whiskey whiskey1 = new Whiskey(111, "Jefferson", "Jefferson", 35, 15, 34.99f);
+        Whiskey whiskey2 = new Whiskey(222, "Jameson", "Jameson", 20, 30, 24.99f);
+        Whiskey whiskey3 = new Whiskey(333, "Makers", "Makers", 18, 30, 22.99f);
+
+        //When
+        WhiskeyService ws = new WhiskeyService();
+        ws.addWhiskey(whiskey1);
+        ws.addWhiskey(whiskey2);
+        ws.addWhiskey(whiskey3);
+
+        ws.delete(111);
+        Whiskey[] expected = { whiskey2, whiskey3};
+
+        //Then
+        Assert.assertEquals(expected, ws.findAllWhiskey());
+
 
     }
 }

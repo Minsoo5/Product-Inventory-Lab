@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class WhiskeyService extends ArrayList<Whiskey> {
+public class WhiskeyService {
 
     private static int nextId = 1;
 
@@ -21,13 +21,16 @@ public class WhiskeyService extends ArrayList<Whiskey> {
 
     }
 
+    public void addWhiskey(Whiskey whiskey) {
+        this.inventory.add(whiskey);
+    }
+
     //read
     public Whiskey findWhiskey(int id) {
         Whiskey whiskey = this.inventory.stream()
                 .filter(w -> w.getId() == id)
                 .findFirst()
                 .orElse(null);
-
         return whiskey;
 //        for (Whiskey w : this.inventory) {
 //            if (w.getId() == id) {
@@ -50,8 +53,17 @@ public class WhiskeyService extends ArrayList<Whiskey> {
         return counter;
     }
 
-    public void addWhiskey(Whiskey whiskey) {
-        this.inventory.add(whiskey);
+    //Delete
 
+    public boolean delete(int id) {
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).getId() == id) {
+                inventory.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
+
+
 }
